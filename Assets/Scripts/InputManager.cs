@@ -19,4 +19,9 @@ public class InputManager : MonoBehaviour {
     mouseX = Input.mousePosition.x;
     mouseY = Input.mousePosition.y;
   }
+
+  // Check if mini game was clicked
+  void OnMouseDown() {
+
+  }
 }
