@@ -16,7 +16,7 @@ public class MiniGameController : MonoBehaviour
   private SpriteRenderer bgSprite;
 
   // Start is called before the first frame update
-  protected void Start()
+  protected virtual void Start()
   {
     timer = gameTime;
 
@@ -26,7 +26,7 @@ public class MiniGameController : MonoBehaviour
   }
 
   // Update is called once per frame
-  protected void Update()
+  protected virtual void Update()
   {
 
     if (gameStarted)
@@ -41,7 +41,7 @@ public class MiniGameController : MonoBehaviour
     }
   }
 
-  public void StartGame()
+  public virtual void StartGame()
   {
     if (!gameStarted)
     {
@@ -52,7 +52,7 @@ public class MiniGameController : MonoBehaviour
     }
   }
 
-  private void EndGame()
+  protected virtual void EndGame()
   {
     gameStarted = false;
     timerText.enabled = false;
