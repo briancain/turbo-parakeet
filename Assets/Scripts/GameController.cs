@@ -18,6 +18,14 @@ public class GameController : MonoBehaviour
   // Cursor handling
   [SerializeField]
   Texture2D cursorTexture;
+  [SerializeField]
+  Texture2D cursorTextureKnife;
+  [SerializeField]
+  Texture2D cursorTexturePepper;
+  [SerializeField]
+  Texture2D cursorTextureHandOpen;
+  [SerializeField]
+  Texture2D cursorTextureHandSelect;
   private CursorMode cursorMode = CursorMode.Auto;
 
   // Start is called before the first frame update
