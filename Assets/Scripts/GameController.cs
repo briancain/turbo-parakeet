@@ -27,7 +27,7 @@ public class GameController : MonoBehaviour
       gameOver();
     } else {
       timeLeft -= Time.deltaTime;
-      Debug.Log("Time Left: " + timeLeft);
+      //Debug.Log("Time Left: " + timeLeft);
     }
   }
 
