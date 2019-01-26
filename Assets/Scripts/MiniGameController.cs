@@ -10,15 +10,19 @@ public class MiniGameController : MonoBehaviour
 
   private float timer;
   private float gameTime = 10.0f;
+
   private GameController gc;
   private Text timerText;
+  private SpriteRenderer bgSprite;
 
   // Start is called before the first frame update
   void Start()
   {
     timer = gameTime;
+
     gc = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameController>();
     timerText = GameObject.FindGameObjectWithTag("MinigameTimer").GetComponent<Text>();
+    bgSprite = GameObject.FindGameObjectWithTag("MinigameBackground").GetComponent<SpriteRenderer>();
   }
 
   // Update is called once per frame
@@ -44,6 +48,7 @@ public class MiniGameController : MonoBehaviour
       gameStarted = true;
       timer = gameTime;
       timerText.enabled = true;
+      bgSprite.enabled = true;
     }
   }
 
@@ -51,6 +56,7 @@ public class MiniGameController : MonoBehaviour
   {
     gameStarted = false;
     timerText.enabled = false;
+    bgSprite.enabled = false;
   }
 
   public void Win()
