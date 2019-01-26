@@ -4,13 +4,29 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+  // Global Timer
+  private float timeLeft;
 
-    // Update is called once per frame
-    void Update()
-    {
+  // Start is called before the first frame update
+  void Start() {
+    timeLeft = 120f;
+  }
+
+  // Update is called once per frame
+  void Update() {
+    updateTimer();
+  }
+
+  void updateTimer() {
+    if (timeLeft <= 0) {
+      gameOver();
+    } else {
+      timeLeft -= Time.deltaTime;
+      Debug.Log("Time Left: " + timeLeft);
     }
+  }
+
+  void gameOver() {
+
+  }
 }
