@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputManager : MonoBehaviour {
-
+public class MeatMiniGameScript : MonoBehaviour
+{
   private float mouseX;
   private float mouseY;
 
@@ -24,7 +24,7 @@ public class InputManager : MonoBehaviour {
   // Check if mini game was clicked
   // Only called if initiated on collider
   void OnMouseDrag() {
-    //Debug.Log(mouseX + "; " + mouseY);
+    Debug.Log(mouseX + "; " + mouseY);
     Debug.Log("Slicing meat....");
   }
 
