@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MiniGameController : MonoBehaviour
 {
+  public Text timerText;
+
   protected bool gameStarted = false;
   private float timer;
   private float gameTime = 10.0f;
@@ -21,12 +24,10 @@ public class MiniGameController : MonoBehaviour
     if (gameStarted)
     {
       timer -= Time.deltaTime;
-      Debug.Log("Minigame time: " + timer);
-
+      timerText.text = ":" + Mathf.Ceil(timer);
 
       if (timer <= 0.0f)
       {
-        Debug.Log("Minigame over!");
         EndGame();
       }
     }
@@ -38,11 +39,13 @@ public class MiniGameController : MonoBehaviour
     {
       gameStarted = true;
       timer = gameTime;
+      timerText.enabled = true;
     }
   }
 
   public void EndGame()
   {
     gameStarted = false;
+    timerText.enabled = false;
   }
 }
