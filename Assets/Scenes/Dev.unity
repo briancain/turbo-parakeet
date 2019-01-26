@@ -453,7 +453,7 @@ GameObject:
   - component: {fileID: 1644803944}
   m_Layer: 5
   m_Name: MinigameTimer
-  m_TagString: Untagged
+  m_TagString: MinigameTimer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

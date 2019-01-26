@@ -5,20 +5,20 @@ using UnityEngine.UI;
 
 public class MiniGameController : MonoBehaviour
 {
-  public Text timerText;
-
   protected bool gameStarted = false;
   protected GameController.Plate difficulty; // Determined by subclass
 
   private float timer;
   private float gameTime = 10.0f;
   private GameController gc;
+  private Text timerText;
 
   // Start is called before the first frame update
   void Start()
   {
     timer = gameTime;
     gc = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameController>();
+    timerText = GameObject.FindGameObjectWithTag("MinigameTimer").GetComponent<Text>();
   }
 
   // Update is called once per frame
