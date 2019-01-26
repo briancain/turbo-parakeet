@@ -16,7 +16,7 @@ public class MiniGameController : MonoBehaviour
   private SpriteRenderer bgSprite;
 
   // Start is called before the first frame update
-  void Start()
+  protected void Start()
   {
     timer = gameTime;
 
@@ -26,7 +26,7 @@ public class MiniGameController : MonoBehaviour
   }
 
   // Update is called once per frame
-  void Update()
+  protected void Update()
   {
 
     if (gameStarted)
