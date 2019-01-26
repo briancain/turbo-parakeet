@@ -23,15 +23,15 @@ public class PlateMovement : MonoBehaviour
   }
 
   void Awake() {
-    startPosition = new Vector3(-9.5f,3.5f,0f);
-    endPosition = new Vector3(9.5f,3.5f,0f);
+    startPosition = new Vector3(-9.5f,4f,0f);
+    endPosition = new Vector3(9.5f,4f,0f);
     plateSpeed = 1.0f;
 
     startTime = Time.time;
     journeyTime = 10.0f;
 
     centerPosition = (startPosition + endPosition) * 0.5F;
-    centerPosition += new Vector3(0, 10, 0);
+    centerPosition += new Vector3(0, 15, 0);
   }
 
   void startMovement() {
