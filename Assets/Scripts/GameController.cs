@@ -7,9 +7,14 @@ public class GameController : MonoBehaviour
   // Global Timer
   private float timeLeft;
 
+  private float playerScore;
+
   // Start is called before the first frame update
   void Start() {
+    // Default to 2 minutes
     timeLeft = 120f;
+
+    playerScore = 0f;
   }
 
   // Update is called once per frame
