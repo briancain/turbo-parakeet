@@ -8,6 +8,15 @@ public class PlateController : MonoBehaviour
   [SerializeField]
   GameObject platePrefab;
 
+  [SerializeField]
+  GameObject easyPlate;
+
+  [SerializeField]
+  GameObject mediumPlate;
+
+  [SerializeField]
+  GameObject hardPlate;
+
   // Positions used to generate plate path
   private Vector3 startPosition;
   private Vector3 middlePosition;
@@ -37,9 +46,21 @@ public class PlateController : MonoBehaviour
   }
 
   void generatePlate() {
-    float randomPlate = Random.Range(0, 10);
-
     if (plateGenerateTimer <= 0) {
+      float randomPlate = Random.Range(0, 10);
+      GameObject plateChoice;
+
+      if (randomPlate >= 0 && randomPlate <= 4) {
+        //Debug.Log("Easy plate");
+        plateChoice = easyPlate;
+      } else if (randomPlate >= 5 && randomPlate <= 7) {
+        //Debug.Log("Medium plate");
+        plateChoice = mediumPlate;
+      } else {
+        //Debug.Log("Hard plate");
+        plateChoice = hardPlate;
+      }
+
       GameObject thisPlate = Instantiate(platePrefab, startPosition, Quaternion.identity);
       //activePlates.Add(thisPlate);
       plateGenerateTimer = 2f;
