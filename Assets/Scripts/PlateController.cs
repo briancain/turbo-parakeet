@@ -17,11 +17,15 @@ public class PlateController : MonoBehaviour
 
   private List<GameObject> activePlates;
 
+  private float plateGenerateTimer;
+
   // Start is called before the first frame update
   void Start() {
     startPosition = new Vector3(-9.5f,3.5f,0f);
     middlePosition = new Vector3(0f,1.5f,0f);
     endPosition = new Vector3(9.5f,3.5f,0f);
+
+    plateGenerateTimer = 1.0f;
 
     activePlates = new List<GameObject>();
     generatePlate();
@@ -35,10 +39,13 @@ public class PlateController : MonoBehaviour
   void generatePlate() {
     float randomPlate = Random.Range(0, 10);
 
-    if (activePlates.Count == 0) {
+    if (plateGenerateTimer <= 0) {
       GameObject thisPlate = Instantiate(platePrefab, startPosition, Quaternion.identity);
-      activePlates.Add(thisPlate);
+      //activePlates.Add(thisPlate);
+      plateGenerateTimer = 2f;
     }
+
+    plateGenerateTimer -= Time.deltaTime;
   }
 
   void destroyPlates() {

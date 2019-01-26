@@ -44,12 +44,28 @@ public class PlateMovement : MonoBehaviour
     // the total journey.
     float fracComplete = (Time.time - startTime) / journeyTime;
 
-    transform.position = Vector3.Slerp(riseRelCenter, setRelCenter, fracComplete);
-    transform.position += centerPosition;
+    if (fracComplete >= 1) {
+      destroyPlate();
+    } else {
+      transform.position = Vector3.Slerp(riseRelCenter, setRelCenter, fracComplete);
+      transform.position += centerPosition;
+    }
+  }
+
+  void destroyPlate() {
+    Object.Destroy(this.gameObject);
   }
 
   // Update is called once per frame
   void Update() {
     startMovement();
+  }
+
+  // Check if mini game was clicked
+  void OnMouseDown() {
+    GameController gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameController>();
+
+    gameManager.startMiniGame(this.gameObject.tag);
+
   }
 }

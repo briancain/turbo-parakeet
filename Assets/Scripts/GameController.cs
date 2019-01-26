@@ -31,6 +31,11 @@ public class GameController : MonoBehaviour
     }
   }
 
+  public void startMiniGame(string type) {
+    Debug.Log("Starting the game: " + type);
+
+  }
+
   void gameOver() {
 
   }

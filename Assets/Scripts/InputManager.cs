@@ -11,6 +11,7 @@ public class InputManager : MonoBehaviour {
 
   // Use this for initialization
   void Start () {
+    Debug.Log("Start");
     bc = gameObject.GetComponent<BoxCollider2D>();
   }
 
@@ -22,6 +23,6 @@ public class InputManager : MonoBehaviour {
 
   // Check if mini game was clicked
   void OnMouseDown() {
-
+    Debug.Log("We clicked on something");
   }
 }
