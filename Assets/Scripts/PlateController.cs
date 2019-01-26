@@ -10,6 +10,7 @@ public class PlateController : MonoBehaviour
 
   // Positions used to generate plate path
   private Vector3 startPosition;
+  private Vector3 middlePosition;
   private Vector3 endPosition;
 
   private GameObject plate;
@@ -19,6 +20,7 @@ public class PlateController : MonoBehaviour
   // Start is called before the first frame update
   void Start() {
     startPosition = new Vector3(-9.5f,3.5f,0f);
+    middlePosition = new Vector3(0f,1.5f,0f);
     endPosition = new Vector3(9.5f,3.5f,0f);
 
     activePlates = new List<GameObject>();
