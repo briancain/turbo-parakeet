@@ -409,6 +409,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platePrefab: {fileID: 3134128762387086398, guid: a440afd5891844650b2871a0194df483,
     type: 3}
+  easyPlate: {fileID: 8576015981889078395, guid: 4b0f6c3fe6105a616bab95eeb78b1403,
+    type: 3}
+  mediumPlate: {fileID: 7898818132412524114, guid: f17606fe063448acda4750f412851082,
+    type: 3}
+  hardPlate: {fileID: 8032750716056795047, guid: 1dab83d2ccede0a42bd737389201399b,
+    type: 3}
 --- !u!4 &1835819484
 Transform:
   m_ObjectHideFlags: 0

@@ -61,7 +61,7 @@ public class PlateController : MonoBehaviour
         plateChoice = hardPlate;
       }
 
-      GameObject thisPlate = Instantiate(platePrefab, startPosition, Quaternion.identity);
+      GameObject thisPlate = Instantiate(plateChoice, startPosition, Quaternion.identity);
       //activePlates.Add(thisPlate);
       plateGenerateTimer = 2f;
     }
