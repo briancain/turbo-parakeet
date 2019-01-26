@@ -15,6 +15,11 @@ public class GameController : MonoBehaviour
 
   private AudioSource audio;
 
+  // Cursor handling
+  [SerializeField]
+  Texture2D cursorTexture;
+  private CursorMode cursorMode = CursorMode.Auto;
+
   // Start is called before the first frame update
   void Start()
   {
