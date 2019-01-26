@@ -13,9 +13,12 @@ public class GameController : MonoBehaviour
 
   private float playerScore;
 
+  private AudioSource audio;
+
   // Start is called before the first frame update
   void Start()
   {
+    audio = GetComponent<AudioSource>();
 
     mgc = miniGameController.GetComponent<MiniGameController>();
     // Default to 2 minutes
