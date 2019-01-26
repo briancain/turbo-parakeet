@@ -8,6 +8,8 @@ TagManager:
   - MediumPlate
   - HardPlate
   - GameManager
+  - MinigameTimer
+  - MinigameBackground
   layers:
   - Default
   - TransparentFX
