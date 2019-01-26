@@ -36,6 +36,10 @@ public class GameController : MonoBehaviour
 
   }
 
+  public void setScore(float score) {
+    playerScore += score;
+  }
+
   void gameOver() {
 
   }
