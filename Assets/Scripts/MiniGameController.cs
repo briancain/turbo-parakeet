@@ -25,12 +25,9 @@ public class MiniGameController : MonoBehaviour
     {
       timer -= Time.deltaTime;
       timerText.text = ":" + Mathf.Ceil(timer);
-      Debug.Log("Minigame time: " + timer);
-
 
       if (timer <= 0.0f)
       {
-        Debug.Log("Minigame over!");
         EndGame();
       }
     }
