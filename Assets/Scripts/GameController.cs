@@ -6,12 +6,19 @@ public class GameController : MonoBehaviour
 {
   public GameObject miniGameController;
 
+  public enum Plate
+  {
+    easy,
+    medium,
+    hard
+  };
+
   private MiniGameController mgc;
 
   // Global Timer
   private float timeLeft;
 
-  private float playerScore;
+  private List<Plate> completedPlates;
 
   private AudioSource audio;
 
@@ -37,7 +44,7 @@ public class GameController : MonoBehaviour
     // Default to 2 minutes
     timeLeft = 120f;
 
-    playerScore = 0f;
+    completedPlates = new List<Plate>();
   }
 
   // Update is called once per frame
@@ -66,8 +73,17 @@ public class GameController : MonoBehaviour
 
   }
 
-  public void setScore(float score) {
-    playerScore += score;
+  public void AddPlate(Plate difficulty)
+  {
+    completedPlates.Add(difficulty);
+    Debug.Log("Won plate " + difficulty);
+    string contents = "[";
+    completedPlates.ForEach(delegate (Plate p)
+    {
+      contents = contents + p + ",";
+    });
+    contents += "]";
+    Debug.Log(contents);
   }
 
   void gameOver()

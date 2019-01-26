@@ -8,13 +8,17 @@ public class MiniGameController : MonoBehaviour
   public Text timerText;
 
   protected bool gameStarted = false;
+  protected GameController.Plate difficulty; // Determined by subclass
+
   private float timer;
   private float gameTime = 10.0f;
+  private GameController gc;
 
   // Start is called before the first frame update
   void Start()
   {
     timer = gameTime;
+    gc = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameController>();
   }
 
   // Update is called once per frame
@@ -28,7 +32,7 @@ public class MiniGameController : MonoBehaviour
 
       if (timer <= 0.0f)
       {
-        EndGame();
+        Lose();
       }
     }
   }
@@ -43,9 +47,21 @@ public class MiniGameController : MonoBehaviour
     }
   }
 
-  public void EndGame()
+  private void EndGame()
   {
     gameStarted = false;
     timerText.enabled = false;
+  }
+
+  public void Win()
+  {
+    gc.AddPlate(difficulty);
+    EndGame();
+  }
+
+  public void Lose()
+  {
+    Debug.Log("lost minigame");
+    EndGame();
   }
 }
