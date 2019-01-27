@@ -25,7 +25,7 @@ public class MeatMiniGameScript : MonoBehaviour
 
       mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
       GameObject localLineObj = Instantiate(line, mousePosition, Quaternion.Euler(0.0f, 0.0f, 0.0f));
-      Destroy(localLineObj.gameObject, 0.5f);
+      Destroy(localLineObj.gameObject, 0.1f);
 
       //Debug.Log(mouseX + "; " + mouseY);
       //Debug.Log("Slicing meat....");
