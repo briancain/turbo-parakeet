@@ -36,6 +36,7 @@ public class GameController : MonoBehaviour
   private CursorMode cursorMode = CursorMode.Auto;
 
   public PepperGameController mediumMinigame;
+  public MeatSlicingGameController hardMinigame;
 
   // Start is called before the first frame update
   void Start()
@@ -76,6 +77,9 @@ public class GameController : MonoBehaviour
     {
       case "MediumPlate":
         mediumMinigame.StartGame();
+        break;
+      case "HardPlate":
+        hardMinigame.StartGame();
         break;
       default:
         mgc.StartGame();
