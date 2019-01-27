@@ -10,20 +10,32 @@ public class MeatMiniGameScript : MonoBehaviour
 
   [SerializeField] private GameObject line;
 
-  // Check if mini game was clicked
-  // Only called if initiated on collider
+  private List<GameObject> lineList;
+
+  // connect the dots....
   void OnMouseDrag() {
     Debug.Log(mouseX + "; " + mouseY);
     Debug.Log("Slicing meat....");
+
     mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    Instantiate(line, mousePosition, Quaternion.Euler(0.0f, 0.0f, 0.0f));
+    GameObject localLineObj = Instantiate(line, mousePosition, Quaternion.Euler(0.0f, 0.0f, 0.0f));
+    lineList.Add(localLineObj);
   }
 
-  //void OnMouseUp() {
-  //  // check if path is complete, if so you win, otherwise fail
-  //  Debug.Log("Let go!");
-  //}
+  void gameOver() {
+    lineList.Clear();
+  }
+
+  void OnMouseUp() {
+    // check if path is complete, if so you win, otherwise fail
+    Debug.Log("Let go!");
+  }
 
   void Update () {
+  }
+
+  void Start() {
+    lineList = new List<GameObject>();
+
   }
 }

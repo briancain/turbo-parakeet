@@ -8,6 +8,7 @@ public class LineDrawerScript : MonoBehaviour
   private Vector2 mousePosition;
   [SerializeField] private bool simplifyLine = false;
   [SerializeField] private float simplifyTolerance = 0.02f;
+
   private void Start () {
     line = GetComponent<LineRenderer>();
   }
