@@ -25,6 +25,8 @@ public class PepperGameController : MiniGameController
 
   [SerializeField]
   AudioClip grindAudioClip;
+  [SerializeField]
+  AudioClip grindSuccessAudioClip;
   private float grindAudioDuration;
   private float grindAudioCooldown;
 
@@ -126,7 +128,7 @@ public class PepperGameController : MiniGameController
       return;
     }
 
-    audio.PlayOneShot(winMiniGameClip, 1f);
+    audio.PlayOneShot(grindSuccessAudioClip, 1f);
     dishesPeppered++;
 
     spawnedFood.transform.GetChild(dishesPeppered).gameObject.SetActive(true);
