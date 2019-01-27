@@ -45,6 +45,10 @@ public class GameController : MonoBehaviour
   public PepperGameController mediumMinigame;
   public MeatSlicingGameController hardMinigame;
 
+
+  [SerializeField]
+  AudioClip gameOverAudioClip;
+
   // Start is called before the first frame update
   void Start()
   {
@@ -124,6 +128,8 @@ public class GameController : MonoBehaviour
 
   void gameOver()
   {
+    audio.Stop();
+    audio.PlayOneShot(gameOverAudioClip, 1f);
     minigameActive = true;
     gameOverUI.SetActive(true);
 
