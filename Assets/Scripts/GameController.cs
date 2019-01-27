@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour
 {
   public enum Plate
   {
-    easy,
+    easy = 0,
     medium,
     hard
   };
@@ -43,6 +43,12 @@ public class GameController : MonoBehaviour
   public PepperGameController mediumMinigame;
   public MeatSlicingGameController hardMinigame;
 
+  public float plateStackOffset = 0.17f;
+  public List<GameObject> platePrefabs;
+
+  private List<GameObject> objs;
+  private Vector3 plateStack;
+
 
   [SerializeField]
   AudioClip gameOverAudioClip;
@@ -61,6 +67,10 @@ public class GameController : MonoBehaviour
     minigameActive = false;
 
     hotSpot = new Vector2(35.0f, 30.0f);
+
+    plateStack = new Vector3(5.94f, -2.45f, 0.0f);
+
+    objs = new List<GameObject>();
   }
 
   // Update is called once per frame
@@ -71,7 +81,8 @@ public class GameController : MonoBehaviour
 
   void updateTimer()
   {
-    if (timeLeft > 0) {
+    if (timeLeft > 0)
+    {
       timeLeft -= Time.deltaTime;
       timerText.text = ":" + Mathf.Ceil(timeLeft);
       //Debug.Log("Time Left: " + timeLeft);
@@ -116,13 +127,11 @@ public class GameController : MonoBehaviour
   {
     completedPlates.Add(difficulty);
     Debug.Log("Won plate " + difficulty);
-    string contents = "[";
-    completedPlates.ForEach(delegate (Plate p)
-    {
-      contents = contents + p + ",";
-    });
-    contents += "]";
-    Debug.Log(contents);
+
+    GameObject plate = Instantiate(platePrefabs[(int)difficulty], plateStack, Quaternion.identity);
+    objs.Add(plate);
+    plate.GetComponent<SpriteRenderer>().sortingOrder = objs.Count;
+    plateStack.y += plateStackOffset;
   }
 
   void gameOver()

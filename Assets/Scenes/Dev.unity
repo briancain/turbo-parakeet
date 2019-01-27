@@ -889,6 +889,11 @@ MonoBehaviour:
   easyMinigame: {fileID: 2084831359}
   mediumMinigame: {fileID: 1269509243}
   hardMinigame: {fileID: 1842637165}
+  plateStackOffset: 0.17
+  platePrefabs:
+  - {fileID: 3615424723901940709, guid: 44fcbe8662f854ff7b38a38aab9eb23d, type: 3}
+  - {fileID: 4050640517619106987, guid: 981cfc5bd3d3f437e95d2d8bb5af029b, type: 3}
+  - {fileID: 4010400252170989437, guid: d88aef85bf6fc430eb729223dd1865be, type: 3}
   gameOverAudioClip: {fileID: 8300000, guid: 4359ef2b1a427b4e6a90fb7704831f99, type: 3}
 --- !u!4 &1252799122
 Transform:
