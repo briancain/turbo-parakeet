@@ -521,6 +521,7 @@ MonoBehaviour:
   cursorTexturePepper: {fileID: 0}
   cursorTextureHandOpen: {fileID: 0}
   cursorTextureHandSelect: {fileID: 0}
+  easyMinigame: {fileID: 1082364504}
   mediumMinigame: {fileID: 1269509243}
   hardMinigame: {fileID: 0}
 --- !u!4 &1252799122
