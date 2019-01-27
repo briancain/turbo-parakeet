@@ -6,6 +6,9 @@ public class MeatSlicingGameController : MiniGameController
 {
 
   [SerializeField]
+  public GameObject hintUI;
+
+  [SerializeField]
   public GameObject meatPrefab;
 
   [SerializeField]
@@ -22,6 +25,7 @@ public class MeatSlicingGameController : MiniGameController
   void Start()
   {
     base.Start();
+
     difficulty = GameController.Plate.hard;
     foodPos = new Vector3(3f, 1f, 0.0f);
     platePos = new Vector3(0f, -2f, 0.0f);
@@ -46,6 +50,8 @@ public class MeatSlicingGameController : MiniGameController
 
   public override void StartGame() {
     base.StartGame();
+    hintUI.SetActive(true);
+
     GameObject spawnedFood = Instantiate(meatPrefab, foodPos, Quaternion.identity);
     GameObject spawnedPlate = Instantiate(platePrefab, platePos, Quaternion.identity);
 
@@ -55,6 +61,7 @@ public class MeatSlicingGameController : MiniGameController
 
   protected override void EndGame()
   {
+    hintUI.SetActive(false);
     foreach(GameObject m in sceneList) {
       Object.Destroy(m);
     }

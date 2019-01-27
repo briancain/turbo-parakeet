@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class MeatGameController : MiniGameController
 {
-  //[SerializeField]
-  //public GameObject foodPrefab;
-
   private int totalSlices;
 
   private float delay = 0.2f;
