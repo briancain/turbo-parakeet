@@ -8,8 +8,8 @@ public class PepperGameController : MiniGameController
 
   public Slider stopper;
   public Slider marker;
+  public GameObject hintUI;
   public GameObject pepperBar;
-
   public GameObject foodPrefab;
 
   private float delay = 0.2f;
@@ -73,6 +73,7 @@ public class PepperGameController : MiniGameController
   public override void StartGame()
   {
     base.StartGame();
+    hintUI.SetActive(true);
     dishesPeppered = 0;
     spawnedFood = Instantiate(foodPrefab, foodPos, Quaternion.identity);
     PrepNewSlider();
@@ -80,6 +81,7 @@ public class PepperGameController : MiniGameController
 
   protected override void EndGame()
   {
+    hintUI.SetActive(false);
     PrepNewSlider();
     Object.Destroy(spawnedFood);
     base.EndGame();
