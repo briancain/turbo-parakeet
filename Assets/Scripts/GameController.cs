@@ -128,7 +128,7 @@ public class GameController : MonoBehaviour
     gameOverUI.SetActive(true);
 
     int score = CalculateScore();
-    gameOverText.text = "Good job!\n\nYou spent $" + score + ".00!";
+    gameOverText.text = "$" + score + ".00";
   }
 
   public void EnableMiniGameSelection()
