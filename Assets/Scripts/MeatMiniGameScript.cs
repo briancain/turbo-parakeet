@@ -27,8 +27,6 @@ public class MeatMiniGameScript : MonoBehaviour
       GameObject localLineObj = Instantiate(line, mousePosition, Quaternion.Euler(0.0f, 0.0f, 0.0f));
       Destroy(localLineObj.gameObject, 0.1f);
 
-      //Debug.Log(mouseX + "; " + mouseY);
-      //Debug.Log("Slicing meat....");
       CheckSlices();
     }
   }
@@ -50,25 +48,17 @@ public class MeatMiniGameScript : MonoBehaviour
   }
 
   void Start() {
-    totalSlices = 75;
+    totalSlices = 200;
     goalDistance = 1f;
   }
 
-  // connect the dots....
-  void OnMouseDrag() {
-
-    // NEED TO CHECK COLLISIONSSSSS OF POINTS
-  }
-
   private void Win() {
-    Debug.Log("game Over!!");
     MeatSlicingGameController msgc = GameObject.FindGameObjectWithTag("MeatSlicing").GetComponent<MeatSlicingGameController>();
     msgc.Win();
   }
 
   void OnMouseUp() {
     // check if path is complete, if so you win, otherwise fail
-    Debug.Log("Let go!");
   }
 
 }

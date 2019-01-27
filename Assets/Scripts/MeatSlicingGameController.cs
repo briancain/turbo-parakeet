@@ -31,8 +31,6 @@ public class MeatSlicingGameController : MiniGameController
     {
       return;
     }
-
-    Debug.Log("starting hard game");
   }
 
   public void WinGame() {
