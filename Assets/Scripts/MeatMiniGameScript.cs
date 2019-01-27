@@ -29,6 +29,16 @@ public class MeatMiniGameScript : MonoBehaviour
 
   private bool gameFinished;
 
+  [SerializeField]
+  Sprite slicedMeat;
+
+  [SerializeField]
+  GameObject meatFlank;
+
+  Vector3 foodPos;
+
+  private SpriteRenderer sr;
+
   void Update () {
     mouseX = Input.mousePosition.x;
     mouseY = Input.mousePosition.y;
@@ -77,17 +87,19 @@ public class MeatMiniGameScript : MonoBehaviour
     audio = GetComponent<AudioSource>();
     sliceAudioDuration = 0.5f;
     gameFinished = false;
+    sr = GetComponent<SpriteRenderer>();
+    foodPos = new Vector3(-0.02f, -1.5f, 0.0f);
   }
 
   private void Win() {
     audio.Stop();
     audio.PlayOneShot(successFinishClip, 1f);
+
+    sr.sprite = slicedMeat;
+    GameObject meatSliceObj = Object.Instantiate(meatFlank, foodPos, Quaternion.identity);
+    // initialize meat piece here
     MeatSlicingGameController msgc = GameObject.FindGameObjectWithTag("MeatSlicing").GetComponent<MeatSlicingGameController>();
-    msgc.Win();
-  }
 
-  void OnMouseUp() {
-    // check if path is complete, if so you win, otherwise fail
+    msgc.WinGame();
   }
-
 }

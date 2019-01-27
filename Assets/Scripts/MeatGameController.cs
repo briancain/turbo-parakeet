@@ -52,12 +52,7 @@ public class MeatGameController : MiniGameController
 
   protected override void EndGame()
   {
-    DestroyLines();
     base.EndGame();
-  }
-
-  private void DestroyLines() {
-
   }
 
   public void SliceRegistered() {

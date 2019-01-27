@@ -17,6 +17,7 @@ TagManager:
   - Timer
   - HardPlateMiniGame
   - MinigameTimerText
+  - MeatSlice
   layers:
   - Default
   - TransparentFX
@@ -65,6 +66,9 @@ TagManager:
     locked: 0
   - name: Minigame
     uniqueID: 3164184105
+    locked: 0
+  - name: Targets
+    uniqueID: 1614631835
     locked: 0
   - name: MinigameUI
     uniqueID: 3795246919

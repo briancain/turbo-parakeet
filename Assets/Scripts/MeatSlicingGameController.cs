@@ -44,6 +44,11 @@ public class MeatSlicingGameController : MiniGameController
     }
   }
 
+  protected override void PrepForEnd() {
+    base.PrepForEnd();
+
+  }
+
   public void WinGame() {
     Win();
   }
@@ -64,6 +69,13 @@ public class MeatSlicingGameController : MiniGameController
     hintUI.SetActive(false);
     foreach(GameObject m in sceneList) {
       Object.Destroy(m);
+    }
+
+    GameObject oldMeat = GameObject.FindWithTag("MeatSlice");
+    if (oldMeat != null) {
+      Object.Destroy(oldMeat);
+    } else {
+      Debug.Log("Null");
     }
     base.EndGame();
   }
