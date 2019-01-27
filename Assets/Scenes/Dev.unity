@@ -624,6 +624,10 @@ MonoBehaviour:
   stopper: {fileID: 499381402}
   marker: {fileID: 499381401}
   pepperBar: {fileID: 499381399}
+  foodPrefab: {fileID: 7336501157258705233, guid: fb2b8605534114dc7935a4119ebf8a1d,
+    type: 3}
+  pepperPrefab: {fileID: 4268659624193823155, guid: 6de6308e4e5e24cb2b09f6ecb6ccb5da,
+    type: 3}
 --- !u!4 &1269509244
 Transform:
   m_ObjectHideFlags: 0
