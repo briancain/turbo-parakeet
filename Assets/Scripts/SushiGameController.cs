@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SushiGameController : MiniGameController
 {
+  [SerializeField]
+  AudioClip selectAudioClip;
+
   public enum Ingredient
   {
     rice = 1,
@@ -111,6 +114,7 @@ public class SushiGameController : MiniGameController
   public void AddIngredient(Ingredient toAdd)
   {
     recipeSum += (int)toAdd;
+    audio.PlayOneShot(selectAudioClip, 1f);
     if (recipeSum == (int)currRecipe)
     {
       Win();

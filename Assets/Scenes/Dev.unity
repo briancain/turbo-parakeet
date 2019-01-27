@@ -1245,6 +1245,7 @@ MonoBehaviour:
   winMiniGameClip: {fileID: 8300000, guid: cfaf5cff84d3456bb8ae72443c27b806, type: 3}
   loseMiniGameClip: {fileID: 8300000, guid: c6d0e4edc406ada998803cae4d8be415, type: 3}
   gameTransitionClip: {fileID: 8300000, guid: e0097634a65ce2178bbb7cb37ad4c579, type: 3}
+  selectAudioClip: {fileID: 8300000, guid: 02b2558227e3d8c56968c0dfc39c92ee, type: 3}
   platePrefab: {fileID: 266781968366064682, guid: a11fc0e7ccf704e8d96825cf43d78af0,
     type: 3}
   ingredientPrefabs:
