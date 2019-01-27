@@ -57,13 +57,13 @@ public class SushiGameController : MiniGameController
     base.Start();
 
     platePos = new Vector3(-0.06f, -1.69f, 0.0f);
-    foodPos = new Vector3(0.15f, -1.45f, 0.0f);
+    foodPos = new Vector3(-0.02f, -0.72f, 0.0f);
 
     ingredientPositions = new List<Vector3>();
-    ingredientPositions.Add(new Vector3(-5.18f, -1.24f, 0.0f));
-    ingredientPositions.Add(new Vector3(-2.29f, 0.8f, 0.0f));
-    ingredientPositions.Add(new Vector3(2.43f, 0.83f, 0.0f));
-    ingredientPositions.Add(new Vector3(4.98f, -0.97f, 0.0f));
+    ingredientPositions.Add(new Vector3(-4.91f, -1.36f, 0.0f));
+    ingredientPositions.Add(new Vector3(-2.02f, 1.05f, 0.0f));
+    ingredientPositions.Add(new Vector3(2.41f, 0.68f, 0.0f));
+    ingredientPositions.Add(new Vector3(4.88f, -1.41f, 0.0f));
 
     objs = new List<GameObject>();
 
