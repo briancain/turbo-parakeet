@@ -23,6 +23,9 @@ public class MiniGameController : MonoBehaviour
   [SerializeField]
   AudioClip loseMiniGameClip;
 
+  [SerializeField]
+  AudioClip gameTransitionClip;
+
   // Start is called before the first frame update
   protected virtual void Start()
   {
@@ -53,6 +56,7 @@ public class MiniGameController : MonoBehaviour
   {
     if (!gameStarted)
     {
+      audio.PlayOneShot(gameTransitionClip, 1f);
       gameStarted = true;
       timer = gameTime;
       timerText.enabled = true;
