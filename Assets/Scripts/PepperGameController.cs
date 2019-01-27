@@ -10,9 +10,21 @@ public class PepperGameController : MiniGameController
   public Slider marker;
   public GameObject pepperBar;
 
+  [SerializeField]
+  public GameObject foodPrefab;
+
+  [SerializeField]
+  public GameObject pepperPrefab;
+
   private float delay = 0.2f;
   private float delayTimer = 0.0f;
   private int dishesPeppered;
+
+  private Vector3 foodPos;
+  private Vector3 pepperPos;
+
+  private GameObject spawnedFood;
+  private GameObject spawnedPepper;
 
   // Start is called before the first frame update
   protected override void Start()
@@ -20,6 +32,8 @@ public class PepperGameController : MiniGameController
     base.Start();
 
     difficulty = GameController.Plate.medium;
+    foodPos = new Vector3(-0.04f, -1.75f, 0.0f);
+    pepperPos = new Vector3(3.96f, 1.39f, 0.0f);
   }
 
   // Update is called once per frame
@@ -62,20 +76,26 @@ public class PepperGameController : MiniGameController
 
   protected override void EndGame()
   {
+    PrepNewSlider();
     base.EndGame();
-    pepperBar.SetActive(false);
   }
 
   private void StartPepperSlider()
   {
     pepperBar.SetActive(true);
     marker.value = Random.Range(0.1f, 0.9f);
+
+    spawnedFood = Instantiate(foodPrefab, foodPos, Quaternion.identity);
+    spawnedPepper = Instantiate(pepperPrefab, pepperPos, Quaternion.identity);
   }
 
   private void PrepNewSlider()
   {
     pepperBar.SetActive(false);
     delayTimer = 0.0f;
+
+    Object.Destroy(spawnedFood);
+    Object.Destroy(spawnedPepper);
   }
 
   private void UpdateGameState()

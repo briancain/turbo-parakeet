@@ -55,3 +55,6 @@ TagManager:
   - name: MinigameBackground
     uniqueID: 3660358453
     locked: 0
+  - name: Minigame
+    uniqueID: 3164184105
+    locked: 0
