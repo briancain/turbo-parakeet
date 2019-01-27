@@ -11,6 +11,7 @@ public class PepperGameController : MiniGameController
   public GameObject hintUI;
   public GameObject pepperBar;
   public GameObject foodPrefab;
+  public GameObject pepperPrefab;
 
   private float delay = 0.2f;
   private float delayTimer = 0.0f;
@@ -20,6 +21,7 @@ public class PepperGameController : MiniGameController
   private Vector3 pepperPos;
 
   private GameObject spawnedFood;
+  private GameObject spawnedPepper;
 
   [SerializeField]
   AudioClip grindAudioClip;
@@ -34,7 +36,7 @@ public class PepperGameController : MiniGameController
     grindAudioDuration = 1f;
     difficulty = GameController.Plate.medium;
     foodPos = new Vector3(-0.04f, -1.75f, 0.0f);
-    pepperPos = new Vector3(3.96f, 1.39f, 0.0f);
+    pepperPos = new Vector3(2.34f, 0.41f, 0.0f);
   }
 
   // Update is called once per frame
@@ -76,6 +78,7 @@ public class PepperGameController : MiniGameController
     hintUI.SetActive(true);
     dishesPeppered = 0;
     spawnedFood = Instantiate(foodPrefab, foodPos, Quaternion.identity);
+    spawnedPepper = Instantiate(pepperPrefab, pepperPos, Quaternion.identity);
     PrepNewSlider();
   }
 
@@ -84,6 +87,7 @@ public class PepperGameController : MiniGameController
     hintUI.SetActive(false);
     PrepNewSlider();
     Object.Destroy(spawnedFood);
+    Object.Destroy(spawnedPepper);
     base.EndGame();
   }
 

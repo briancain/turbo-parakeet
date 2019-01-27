@@ -785,6 +785,8 @@ MonoBehaviour:
   pepperBar: {fileID: 499381399}
   foodPrefab: {fileID: 7336501157258705233, guid: fb2b8605534114dc7935a4119ebf8a1d,
     type: 3}
+  pepperPrefab: {fileID: 9004778430324769003, guid: a80bc28454ea340b894aa8902167272e,
+    type: 3}
   grindAudioClip: {fileID: 8300000, guid: 956ef88f2d23e649182498262d6fd9ed, type: 3}
 --- !u!4 &1269509244
 Transform:
