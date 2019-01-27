@@ -14,6 +14,7 @@ TagManager:
   - SlicePath
   - MeatSlicing
   - SushiController
+  - Timer
   layers:
   - Default
   - TransparentFX

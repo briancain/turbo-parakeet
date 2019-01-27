@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class GameController : MonoBehaviour
 
   // Global Timer
   private float timeLeft;
+  private Text timerText;
 
   private List<Plate> completedPlates;
 
@@ -50,6 +52,8 @@ public class GameController : MonoBehaviour
     mgc = miniGameController.GetComponent<MiniGameController>();
     // Default to 2 minutes
     timeLeft = 120f;
+    timerText = GameObject.FindGameObjectWithTag("Timer").GetComponent<Text>();
+    timerText.enabled = true;
 
     completedPlates = new List<Plate>();
     minigameActive = false;
@@ -70,6 +74,7 @@ public class GameController : MonoBehaviour
     else
     {
       timeLeft -= Time.deltaTime;
+      timerText.text = ":" + Mathf.Ceil(timeLeft);
       //Debug.Log("Time Left: " + timeLeft);
     }
   }
@@ -99,6 +104,7 @@ public class GameController : MonoBehaviour
       default:
         break;
     }
+    timerText.enabled = false;
     minigameActive = true;
   }
 
@@ -122,6 +128,7 @@ public class GameController : MonoBehaviour
   public void EnableMiniGameSelection()
   {
     minigameActive = false;
+    timerText.enabled = true;
     Debug.Log("returning cursor...");
     Cursor.SetCursor(null, Vector2.zero, cursorMode);
   }
