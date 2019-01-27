@@ -74,6 +74,7 @@ public class MeatMiniGameScript : MonoBehaviour
   }
 
   private void Win() {
+    audio.Stop();
     audio.PlayOneShot(successFinishClip, 1f);
     MeatSlicingGameController msgc = GameObject.FindGameObjectWithTag("MeatSlicing").GetComponent<MeatSlicingGameController>();
     msgc.Win();

@@ -15,6 +15,14 @@ public class MiniGameController : MonoBehaviour
   private Text timerText;
   private SpriteRenderer bgSprite;
 
+  private AudioSource audio;
+
+  [SerializeField]
+  AudioClip winMiniGameClip;
+
+  [SerializeField]
+  AudioClip loseMiniGameClip;
+
   // Start is called before the first frame update
   protected virtual void Start()
   {
@@ -23,6 +31,7 @@ public class MiniGameController : MonoBehaviour
     gc = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameController>();
     timerText = GameObject.FindGameObjectWithTag("MinigameTimer").GetComponent<Text>();
     bgSprite = GameObject.FindGameObjectWithTag("MinigameBackground").GetComponent<SpriteRenderer>();
+    audio = GetComponent<AudioSource>();
   }
 
   // Update is called once per frame
@@ -62,12 +71,14 @@ public class MiniGameController : MonoBehaviour
 
   public void Win()
   {
+    audio.PlayOneShot(winMiniGameClip, 1f);
     gc.AddPlate(difficulty);
     EndGame();
   }
 
   public void Lose()
   {
+    audio.PlayOneShot(loseMiniGameClip, 1f);
     Debug.Log("lost minigame");
     EndGame();
   }
