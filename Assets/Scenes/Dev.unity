@@ -1060,6 +1060,8 @@ MonoBehaviour:
   pepperPrefab: {fileID: 9004778430324769003, guid: a80bc28454ea340b894aa8902167272e,
     type: 3}
   grindAudioClip: {fileID: 8300000, guid: 956ef88f2d23e649182498262d6fd9ed, type: 3}
+  grindSuccessAudioClip: {fileID: 8300000, guid: 7d43686638bf9f04e9b6e90c76d2bb6e,
+    type: 3}
 --- !u!4 &1269509244
 Transform:
   m_ObjectHideFlags: 0
