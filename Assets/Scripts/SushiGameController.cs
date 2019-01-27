@@ -25,16 +25,16 @@ public class SushiGameController : MiniGameController
   }
 
   public GameObject platePrefab;
-
+  public GameObject foodPrefab;
   public List<GameObject> ingredientPrefabs;
 
   Vector3 platePos;
+  Vector3 foodPos;
   List<Vector3> ingredientPositions;
 
   List<GameObject> objs;
 
   Recipe currRecipe;
-
   int recipeSum;
 
   [SerializeField]
@@ -57,6 +57,7 @@ public class SushiGameController : MiniGameController
     base.Start();
 
     platePos = new Vector3(-0.06f, -1.69f, 0.0f);
+    foodPos = new Vector3(0.15f, -1.45f, 0.0f);
 
     ingredientPositions = new List<Vector3>();
     ingredientPositions.Add(new Vector3(-5.18f, -1.24f, 0.0f));
@@ -88,12 +89,14 @@ public class SushiGameController : MiniGameController
     {
       objs.Add(Instantiate(ingredientPrefabs[i], ingredientPositions[i], Quaternion.identity));
     }
-
     objs.Add(Instantiate(platePrefab, platePos, Quaternion.identity));
 
+    // Randomly generate our recipe. Each recipe is the numerical sum of its
+    // ingredients.
     currRecipe = (Recipe)Random.Range(4, 7);
     recipeSum = 0;
 
+    //Enable our UI prompt
     sushiUIPrompt.SetActive(true);
     sushiPromptImage.sprite = GetRecipeTexture();
   }
@@ -108,6 +111,16 @@ public class SushiGameController : MiniGameController
     objs.Clear();
 
     sushiUIPrompt.SetActive(false);
+  }
+
+  protected override void PrepForEnd()
+  {
+    base.PrepForEnd();
+
+    GameObject food = Object.Instantiate(foodPrefab, foodPos, Quaternion.identity);
+    SpriteRenderer foodSprite = food.GetComponent<SpriteRenderer>();
+    foodSprite.sprite = GetRecipeTexture();
+    objs.Add(food);
   }
 
   public bool Required(Ingredient toCheck)
