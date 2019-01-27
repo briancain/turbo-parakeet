@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SushiGameController : MiniGameController
 {
@@ -35,6 +36,20 @@ public class SushiGameController : MiniGameController
   Recipe currRecipe;
 
   int recipeSum;
+
+  [SerializeField]
+  GameObject sushiUIPrompt;
+  [SerializeField]
+  Image sushiPromptImage;
+
+  [SerializeField]
+  Sprite salmonNigiriTexture;
+  [SerializeField]
+  Sprite tunaNigiriTexture;
+  [SerializeField]
+  Sprite salmonRollTexture;
+  [SerializeField]
+  Sprite tunaRollTexture;
 
   // Start is called before the first frame update
   protected override void Start()
@@ -79,7 +94,8 @@ public class SushiGameController : MiniGameController
     currRecipe = (Recipe)Random.Range(4, 7);
     recipeSum = 0;
 
-    Debug.Log("Current recipe is " + currRecipe);
+    sushiUIPrompt.SetActive(true);
+    sushiPromptImage.sprite = GetRecipeTexture();
   }
 
   protected override void EndGame()
@@ -90,6 +106,8 @@ public class SushiGameController : MiniGameController
       Object.Destroy(obj);
     }
     objs.Clear();
+
+    sushiUIPrompt.SetActive(false);
   }
 
   public bool Required(Ingredient toCheck)
@@ -119,6 +137,25 @@ public class SushiGameController : MiniGameController
     {
       Win();
     }
+  }
+
+  public Sprite GetRecipeTexture()
+  {
+    switch (currRecipe)
+    {
+      case Recipe.salmonHandroll:
+        return salmonRollTexture;
+      case Recipe.tunaHandroll:
+        return tunaRollTexture;
+      case Recipe.salmonNigiri:
+        return salmonNigiriTexture;
+      case Recipe.tunaNigiri:
+        return tunaNigiriTexture;
+      default:
+        break;
+    }
+
+    return null;
   }
 
 }
