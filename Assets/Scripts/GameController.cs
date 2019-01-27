@@ -18,6 +18,9 @@ public class GameController : MonoBehaviour
   private float timeLeft;
   private Text timerText;
 
+  public GameObject gameOverUI;
+  public Text gameOverText;
+
   private List<Plate> completedPlates;
 
   private AudioSource audio;
@@ -59,20 +62,21 @@ public class GameController : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-    updateTimer();
+    if (timeLeft > 0)
+    {
+      updateTimer();
+    }
   }
 
   void updateTimer()
   {
+    timeLeft -= Time.deltaTime;
+    timerText.text = ":" + Mathf.Ceil(timeLeft);
+    //Debug.Log("Time Left: " + timeLeft);
+
     if (timeLeft <= 0)
     {
       gameOver();
-    }
-    else
-    {
-      timeLeft -= Time.deltaTime;
-      timerText.text = ":" + Mathf.Ceil(timeLeft);
-      //Debug.Log("Time Left: " + timeLeft);
     }
   }
 
@@ -120,6 +124,11 @@ public class GameController : MonoBehaviour
 
   void gameOver()
   {
+    minigameActive = true;
+    gameOverUI.SetActive(true);
+
+    int score = CalculateScore();
+    gameOverText.text = "Good job!\n\nYou spent $" + score + ".00!";
   }
 
   public void EnableMiniGameSelection()
@@ -128,5 +137,30 @@ public class GameController : MonoBehaviour
     timerText.enabled = true;
     Debug.Log("returning cursor...");
     Cursor.SetCursor(null, Vector2.zero, cursorMode);
+  }
+
+  private int CalculateScore()
+  {
+    int score = 0;
+
+    foreach (Plate p in completedPlates)
+    {
+      switch (p)
+      {
+        case Plate.easy:
+          score += 5;
+          break;
+        case Plate.medium:
+          score += 20;
+          break;
+        case Plate.hard:
+          score += 50;
+          break;
+        default:
+          break;
+      }
+    }
+
+    return score;
   }
 }
