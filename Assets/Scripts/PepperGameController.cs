@@ -10,11 +10,7 @@ public class PepperGameController : MiniGameController
   public Slider marker;
   public GameObject pepperBar;
 
-  [SerializeField]
   public GameObject foodPrefab;
-
-  [SerializeField]
-  public GameObject pepperPrefab;
 
   private float delay = 0.2f;
   private float delayTimer = 0.0f;
@@ -24,7 +20,6 @@ public class PepperGameController : MiniGameController
   private Vector3 pepperPos;
 
   private GameObject spawnedFood;
-  private GameObject spawnedPepper;
 
   [SerializeField]
   AudioClip grindAudioClip;
@@ -79,35 +74,39 @@ public class PepperGameController : MiniGameController
   {
     base.StartGame();
     dishesPeppered = 0;
+    spawnedFood = Instantiate(foodPrefab, foodPos, Quaternion.identity);
     PrepNewSlider();
   }
 
   protected override void EndGame()
   {
     PrepNewSlider();
+    Object.Destroy(spawnedFood);
     base.EndGame();
+  }
+
+  protected override void PrepForEnd()
+  {
+    base.PrepForEnd();
+    pepperBar.SetActive(false);
   }
 
   private void StartPepperSlider()
   {
     pepperBar.SetActive(true);
     marker.value = Random.Range(0.1f, 0.9f);
-
-    spawnedFood = Instantiate(foodPrefab, foodPos, Quaternion.identity);
-    spawnedPepper = Instantiate(pepperPrefab, pepperPos, Quaternion.identity);
   }
 
   private void PrepNewSlider()
   {
     pepperBar.SetActive(false);
     delayTimer = 0.0f;
-
-    Object.Destroy(spawnedFood);
-    Object.Destroy(spawnedPepper);
   }
 
-  private void PlayGrindClip() {
-    if (Time.time > grindAudioCooldown) {
+  private void PlayGrindClip()
+  {
+    if (Time.time > grindAudioCooldown)
+    {
       grindAudioCooldown = Time.time + grindAudioDuration;
       audio.PlayOneShot(grindAudioClip, 3f);
     }
@@ -123,6 +122,8 @@ public class PepperGameController : MiniGameController
 
     audio.PlayOneShot(winMiniGameClip, 1f);
     dishesPeppered++;
+
+    spawnedFood.transform.GetChild(dishesPeppered).gameObject.SetActive(true);
     if (dishesPeppered >= 3)
     {
       Win();
