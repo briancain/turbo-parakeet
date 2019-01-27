@@ -53,10 +53,6 @@ public class MeatSlicingGameController : MiniGameController
     sceneList.Add(spawnedPlate);
   }
 
-  protected override void PrepForEnd() {
-
-  }
-
   protected override void EndGame()
   {
     foreach(GameObject m in sceneList) {
