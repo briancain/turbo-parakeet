@@ -35,6 +35,8 @@ public class GameController : MonoBehaviour
   Texture2D cursorTextureHandSelect;
   private CursorMode cursorMode = CursorMode.Auto;
 
+  public PepperGameController mediumMinigame;
+
   // Start is called before the first frame update
   void Start()
   {
@@ -69,8 +71,16 @@ public class GameController : MonoBehaviour
   public void startMiniGame(string type)
   {
     Debug.Log("Starting the game: " + type);
-    mgc.StartGame();
 
+    switch (type)
+    {
+      case "MediumPlate":
+        mediumMinigame.StartGame();
+        break;
+      default:
+        mgc.StartGame();
+        break;
+    }
   }
 
   public void AddPlate(Plate difficulty)

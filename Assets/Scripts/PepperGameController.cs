@@ -18,6 +18,8 @@ public class PepperGameController : MiniGameController
   protected override void Start()
   {
     base.Start();
+
+    difficulty = GameController.Plate.medium;
   }
 
   // Update is called once per frame
