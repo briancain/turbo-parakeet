@@ -22,6 +22,8 @@ public class GameController : MonoBehaviour
 
   private AudioSource audio;
 
+  private bool minigameActive;
+
   // Cursor handling
   [SerializeField]
   Texture2D cursorTexture;
@@ -48,6 +50,7 @@ public class GameController : MonoBehaviour
     timeLeft = 120f;
 
     completedPlates = new List<Plate>();
+    minigameActive = false;
   }
 
   // Update is called once per frame
@@ -71,6 +74,10 @@ public class GameController : MonoBehaviour
 
   public void startMiniGame(string type)
   {
+    if(minigameActive) {
+      return;
+    }
+
     Debug.Log("Starting the game: " + type);
 
     switch (type)
@@ -85,6 +92,7 @@ public class GameController : MonoBehaviour
         mgc.StartGame();
         break;
     }
+    minigameActive = true;
   }
 
   public void AddPlate(Plate difficulty)
@@ -102,5 +110,9 @@ public class GameController : MonoBehaviour
 
   void gameOver()
   {
+  }
+
+  public void EnableMiniGameSelection(){
+    minigameActive = false;
   }
 }

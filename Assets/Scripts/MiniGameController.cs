@@ -56,6 +56,8 @@ public class MiniGameController : MonoBehaviour
     gameStarted = false;
     timerText.enabled = false;
     bgSprite.enabled = false;
+
+    gc.EnableMiniGameSelection();
   }
 
   public void Win()
