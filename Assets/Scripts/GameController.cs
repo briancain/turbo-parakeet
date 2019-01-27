@@ -37,6 +37,7 @@ public class GameController : MonoBehaviour
   Texture2D cursorTextureHandSelect;
   private CursorMode cursorMode = CursorMode.Auto;
 
+  public SushiGameController easyMinigame;
   public PepperGameController mediumMinigame;
   public MeatSlicingGameController hardMinigame;
 
@@ -88,8 +89,10 @@ public class GameController : MonoBehaviour
       case "HardPlate":
         hardMinigame.StartGame();
         break;
+      case "EasyPlate":
+        easyMinigame.StartGame();
+        break;
       default:
-        mgc.StartGame();
         break;
     }
     minigameActive = true;
