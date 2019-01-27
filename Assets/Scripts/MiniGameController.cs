@@ -14,7 +14,6 @@ public class MiniGameController : MonoBehaviour
   private float finishTime = 1.0f;
 
   private GameController gc;
-  private Text timerText;
   private SpriteRenderer bgSprite;
 
   public AudioSource audio;
@@ -28,13 +27,15 @@ public class MiniGameController : MonoBehaviour
   [SerializeField]
   AudioClip gameTransitionClip;
 
+  public GameObject timerUI;
+  public Text timerText;
+
   // Start is called before the first frame update
   protected virtual void Start()
   {
     timer = gameTime;
 
     gc = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameController>();
-    timerText = GameObject.FindGameObjectWithTag("MinigameTimer").GetComponent<Text>();
     bgSprite = GameObject.FindGameObjectWithTag("MinigameBackground").GetComponent<SpriteRenderer>();
     audio = GetComponent<AudioSource>();
   }
@@ -69,7 +70,7 @@ public class MiniGameController : MonoBehaviour
       audio.PlayOneShot(gameTransitionClip, 1f);
       gameStarted = true;
       timer = gameTime;
-      timerText.enabled = true;
+      timerUI.SetActive(true);
       bgSprite.enabled = true;
     }
   }
@@ -78,7 +79,7 @@ public class MiniGameController : MonoBehaviour
   {
     gameStarted = false;
     finishing = false;
-    timerText.enabled = false;
+    timerUI.SetActive(false);
     bgSprite.enabled = false;
 
     gc.EnableMiniGameSelection();

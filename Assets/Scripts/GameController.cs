@@ -14,8 +14,6 @@ public class GameController : MonoBehaviour
     hard
   };
 
-  private MiniGameController mgc;
-
   // Global Timer
   private float timeLeft;
   private Text timerText;
@@ -49,7 +47,6 @@ public class GameController : MonoBehaviour
   {
     audio = GetComponent<AudioSource>();
 
-    mgc = miniGameController.GetComponent<MiniGameController>();
     // Default to 2 minutes
     timeLeft = 120f;
     timerText = GameObject.FindGameObjectWithTag("Timer").GetComponent<Text>();

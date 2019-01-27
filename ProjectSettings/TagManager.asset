@@ -16,6 +16,7 @@ TagManager:
   - SushiController
   - Timer
   - HardPlateMiniGame
+  - MinigameTimerText
   layers:
   - Default
   - TransparentFX
