@@ -25,7 +25,7 @@ public class MeatMiniGameScript : MonoBehaviour
 
       mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
       GameObject localLineObj = Instantiate(line, mousePosition, Quaternion.Euler(0.0f, 0.0f, 0.0f));
-      Destroy(localLineObj.gameObject, 1);
+      Destroy(localLineObj.gameObject, 0.5f);
 
       //Debug.Log(mouseX + "; " + mouseY);
       //Debug.Log("Slicing meat....");
@@ -42,15 +42,11 @@ public class MeatMiniGameScript : MonoBehaviour
       if(distance <= goalDistance) {
         totalSlices--;
         if(totalSlices <= 0) {
-          GameOver();
+          Win();
         }
       }
     }
 
-  }
-
-  void OnCollisionEnter2D(Collision2D col) {
-    Debug.Log("oops");
   }
 
   void Start() {
@@ -64,8 +60,10 @@ public class MeatMiniGameScript : MonoBehaviour
     // NEED TO CHECK COLLISIONSSSSS OF POINTS
   }
 
-  private void GameOver() {
+  private void Win() {
     Debug.Log("game Over!!");
+    MeatSlicingGameController msgc = GameObject.FindGameObjectWithTag("MeatSlicing").GetComponent<MeatSlicingGameController>();
+    msgc.Win();
   }
 
   void OnMouseUp() {

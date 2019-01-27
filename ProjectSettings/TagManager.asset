@@ -12,6 +12,7 @@ TagManager:
   - MinigameBackground
   - Meat
   - SlicePath
+  - MeatSlicing
   layers:
   - Default
   - TransparentFX

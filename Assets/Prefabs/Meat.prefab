@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4062629226228553897}
-  m_LocalRotation: {x: 0.05306858, y: -0, z: -0, w: 0.9985909}
+  m_LocalRotation: {x: 0.053067982, y: 0, z: 0, w: 0.99859095}
   m_LocalPosition: {x: 3, y: 1, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
@@ -71,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1130783191
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 91b923ae02f0def57a255a58e067efc3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -196,15 +196,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8893221794278211709, guid: 18eddf7c0ecb85314ab97af37c0b08db,
+    - target: {fileID: 8893221794278211708, guid: 18eddf7c0ecb85314ab97af37c0b08db,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.03
+      propertyPath: m_SortingLayerID
+      value: -1130783191
       objectReference: {fileID: 0}
-    - target: {fileID: 8893221794278211709, guid: 18eddf7c0ecb85314ab97af37c0b08db,
+    - target: {fileID: 8893221794278211708, guid: 18eddf7c0ecb85314ab97af37c0b08db,
         type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.03
+      propertyPath: m_SortingLayer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18eddf7c0ecb85314ab97af37c0b08db, type: 3}
@@ -287,15 +287,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8893221794278211709, guid: 18eddf7c0ecb85314ab97af37c0b08db,
+    - target: {fileID: 8893221794278211708, guid: 18eddf7c0ecb85314ab97af37c0b08db,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.03
+      propertyPath: m_SortingLayerID
+      value: -1130783191
       objectReference: {fileID: 0}
-    - target: {fileID: 8893221794278211709, guid: 18eddf7c0ecb85314ab97af37c0b08db,
+    - target: {fileID: 8893221794278211708, guid: 18eddf7c0ecb85314ab97af37c0b08db,
         type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.03
+      propertyPath: m_SortingLayer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18eddf7c0ecb85314ab97af37c0b08db, type: 3}
@@ -378,15 +378,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8893221794278211709, guid: 18eddf7c0ecb85314ab97af37c0b08db,
+    - target: {fileID: 8893221794278211708, guid: 18eddf7c0ecb85314ab97af37c0b08db,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.03
+      propertyPath: m_SortingLayerID
+      value: -1130783191
       objectReference: {fileID: 0}
-    - target: {fileID: 8893221794278211709, guid: 18eddf7c0ecb85314ab97af37c0b08db,
+    - target: {fileID: 8893221794278211708, guid: 18eddf7c0ecb85314ab97af37c0b08db,
         type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.03
+      propertyPath: m_SortingLayer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18eddf7c0ecb85314ab97af37c0b08db, type: 3}
@@ -468,6 +468,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8893221794278211708, guid: 18eddf7c0ecb85314ab97af37c0b08db,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1130783191
+      objectReference: {fileID: 0}
+    - target: {fileID: 8893221794278211708, guid: 18eddf7c0ecb85314ab97af37c0b08db,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18eddf7c0ecb85314ab97af37c0b08db, type: 3}
