@@ -1479,7 +1479,8 @@ MonoBehaviour:
   selectAudioClip: {fileID: 8300000, guid: 02b2558227e3d8c56968c0dfc39c92ee, type: 3}
   platePrefab: {fileID: 266781968366064682, guid: a11fc0e7ccf704e8d96825cf43d78af0,
     type: 3}
-  foodPrefab: {fileID: 0}
+  foodPrefab: {fileID: 5283668342697686264, guid: 8cab9d90e7af442049645f49c62d2c46,
+    type: 3}
   ingredientPrefabs:
   - {fileID: 1058395574080692361, guid: e7d7cdbe164394e1cb5fb0bb97e49c58, type: 3}
   - {fileID: 6788375913284711289, guid: 846ce90186a0a4ce9b99d5404964df5b, type: 3}
