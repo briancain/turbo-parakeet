@@ -371,7 +371,7 @@ AudioSource:
   m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -493,7 +493,7 @@ MonoBehaviour:
   audio: {fileID: 0}
   winMiniGameClip: {fileID: 8300000, guid: cfaf5cff84d3456bb8ae72443c27b806, type: 3}
   loseMiniGameClip: {fileID: 8300000, guid: c6d0e4edc406ada998803cae4d8be415, type: 3}
-  gameTransitionClip: {fileID: 8300000, guid: b4489564cd5007bdfafa6c6793749374, type: 3}
+  gameTransitionClip: {fileID: 8300000, guid: e0097634a65ce2178bbb7cb37ad4c579, type: 3}
   stopper: {fileID: 499381402}
   marker: {fileID: 499381401}
   pepperBar: {fileID: 499381399}
@@ -824,7 +824,7 @@ MonoBehaviour:
   audio: {fileID: 0}
   winMiniGameClip: {fileID: 8300000, guid: cfaf5cff84d3456bb8ae72443c27b806, type: 3}
   loseMiniGameClip: {fileID: 8300000, guid: c6d0e4edc406ada998803cae4d8be415, type: 3}
-  gameTransitionClip: {fileID: 8300000, guid: b4489564cd5007bdfafa6c6793749374, type: 3}
+  gameTransitionClip: {fileID: 8300000, guid: e0097634a65ce2178bbb7cb37ad4c579, type: 3}
 --- !u!4 &1783807239
 Transform:
   m_ObjectHideFlags: 0
@@ -1019,7 +1019,7 @@ MonoBehaviour:
   audio: {fileID: 0}
   winMiniGameClip: {fileID: 8300000, guid: cfaf5cff84d3456bb8ae72443c27b806, type: 3}
   loseMiniGameClip: {fileID: 8300000, guid: c6d0e4edc406ada998803cae4d8be415, type: 3}
-  gameTransitionClip: {fileID: 8300000, guid: b4489564cd5007bdfafa6c6793749374, type: 3}
+  gameTransitionClip: {fileID: 8300000, guid: e0097634a65ce2178bbb7cb37ad4c579, type: 3}
   meatPrefab: {fileID: 4062629226228553897, guid: 4ccfffda17f3233a6828697b1ade8796,
     type: 3}
 --- !u!4 &1842637166
@@ -1244,7 +1244,7 @@ MonoBehaviour:
   audio: {fileID: 0}
   winMiniGameClip: {fileID: 8300000, guid: cfaf5cff84d3456bb8ae72443c27b806, type: 3}
   loseMiniGameClip: {fileID: 8300000, guid: c6d0e4edc406ada998803cae4d8be415, type: 3}
-  gameTransitionClip: {fileID: 8300000, guid: b4489564cd5007bdfafa6c6793749374, type: 3}
+  gameTransitionClip: {fileID: 8300000, guid: e0097634a65ce2178bbb7cb37ad4c579, type: 3}
   platePrefab: {fileID: 266781968366064682, guid: a11fc0e7ccf704e8d96825cf43d78af0,
     type: 3}
   ingredientPrefabs:

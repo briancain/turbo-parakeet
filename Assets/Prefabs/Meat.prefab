@@ -130,7 +130,7 @@ MonoBehaviour:
   - {fileID: 4830754756446413579}
   - {fileID: 4830754755712276917}
   - {fileID: 4830754757387601362}
-  sliceAudioClip: {fileID: 8300000, guid: 2024a8772879a0add9f9bdb82d097b59, type: 3}
+  sliceAudioClip: {fileID: 8300000, guid: d7f249309c96621b39b4144eafc40f61, type: 3}
   successFinishClip: {fileID: 8300000, guid: c6fb072b4817f85bf97d16d2c40f2beb, type: 3}
 --- !u!82 &1926886307927437108
 AudioSource:

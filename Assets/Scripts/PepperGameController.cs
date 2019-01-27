@@ -109,7 +109,7 @@ public class PepperGameController : MiniGameController
   private void PlayGrindClip() {
     if (Time.time > grindAudioCooldown) {
       grindAudioCooldown = Time.time + grindAudioDuration;
-      audio.PlayOneShot(grindAudioClip, 1f);
+      audio.PlayOneShot(grindAudioClip, 3f);
     }
   }
 
