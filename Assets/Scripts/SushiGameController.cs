@@ -8,6 +8,9 @@ public class SushiGameController : MiniGameController
   [SerializeField]
   AudioClip selectAudioClip;
 
+  [SerializeField]
+  AudioClip selectFailAudioClip;
+
   public enum Ingredient
   {
     rice = 1,
@@ -150,6 +153,11 @@ public class SushiGameController : MiniGameController
     {
       Win();
     }
+  }
+
+  public void WrongSelect()
+  {
+    audio.PlayOneShot(selectFailAudioClip, 1f);
   }
 
   public Sprite GetRecipeTexture()
