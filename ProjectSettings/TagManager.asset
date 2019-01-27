@@ -15,6 +15,7 @@ TagManager:
   - MeatSlicing
   - SushiController
   - Timer
+  - HardPlateMiniGame
   layers:
   - Default
   - TransparentFX

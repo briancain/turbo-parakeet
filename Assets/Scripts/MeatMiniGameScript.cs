@@ -27,6 +27,8 @@ public class MeatMiniGameScript : MonoBehaviour
   [SerializeField]
   AudioClip successFinishClip;
 
+  private bool gameFinished;
+
   void Update () {
     mouseX = Input.mousePosition.x;
     mouseY = Input.mousePosition.y;
@@ -37,7 +39,9 @@ public class MeatMiniGameScript : MonoBehaviour
       GameObject localLineObj = Instantiate(line, mousePosition, Quaternion.Euler(0.0f, 0.0f, 0.0f));
       Destroy(localLineObj.gameObject, 0.1f);
 
-      CheckSlices();
+      if (!gameFinished) {
+        CheckSlices();
+      }
     }
   }
 
@@ -58,6 +62,7 @@ public class MeatMiniGameScript : MonoBehaviour
         PlaySliceAudio();
         totalSlices--;
         if(totalSlices <= 0) {
+          gameFinished = true;
           Win();
         }
       }
@@ -71,6 +76,7 @@ public class MeatMiniGameScript : MonoBehaviour
 
     audio = GetComponent<AudioSource>();
     sliceAudioDuration = 0.5f;
+    gameFinished = false;
   }
 
   private void Win() {

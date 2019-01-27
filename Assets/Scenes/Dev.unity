@@ -1253,6 +1253,8 @@ MonoBehaviour:
   gameTransitionClip: {fileID: 8300000, guid: e0097634a65ce2178bbb7cb37ad4c579, type: 3}
   meatPrefab: {fileID: 4062629226228553897, guid: 4ccfffda17f3233a6828697b1ade8796,
     type: 3}
+  platePrefab: {fileID: 2876834607763631479, guid: 23379d2605fa1408588fb3d9e5c9eaa0,
+    type: 3}
 --- !u!4 &1842637166
 Transform:
   m_ObjectHideFlags: 0
