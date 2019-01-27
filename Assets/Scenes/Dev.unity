@@ -371,7 +371,7 @@ AudioSource:
   m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -490,6 +490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f0e0660c6d264842ba6042708c32aad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audio: {fileID: 0}
   winMiniGameClip: {fileID: 8300000, guid: cfaf5cff84d3456bb8ae72443c27b806, type: 3}
   loseMiniGameClip: {fileID: 8300000, guid: c6d0e4edc406ada998803cae4d8be415, type: 3}
   gameTransitionClip: {fileID: 8300000, guid: b4489564cd5007bdfafa6c6793749374, type: 3}
@@ -500,6 +501,7 @@ MonoBehaviour:
     type: 3}
   pepperPrefab: {fileID: 4268659624193823155, guid: 6de6308e4e5e24cb2b09f6ecb6ccb5da,
     type: 3}
+  grindAudioClip: {fileID: 8300000, guid: 956ef88f2d23e649182498262d6fd9ed, type: 3}
 --- !u!4 &1269509244
 Transform:
   m_ObjectHideFlags: 0
@@ -819,6 +821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615fd9f672e304ddfb2c9e6c7504c039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audio: {fileID: 0}
   winMiniGameClip: {fileID: 8300000, guid: cfaf5cff84d3456bb8ae72443c27b806, type: 3}
   loseMiniGameClip: {fileID: 8300000, guid: c6d0e4edc406ada998803cae4d8be415, type: 3}
   gameTransitionClip: {fileID: 8300000, guid: b4489564cd5007bdfafa6c6793749374, type: 3}
@@ -1013,6 +1016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615a7bd93877c0b9a87f24e8652841b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audio: {fileID: 0}
   winMiniGameClip: {fileID: 8300000, guid: cfaf5cff84d3456bb8ae72443c27b806, type: 3}
   loseMiniGameClip: {fileID: 8300000, guid: c6d0e4edc406ada998803cae4d8be415, type: 3}
   gameTransitionClip: {fileID: 8300000, guid: b4489564cd5007bdfafa6c6793749374, type: 3}
@@ -1237,6 +1241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e69145ffcea8543b1a535b194260e72d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audio: {fileID: 0}
   winMiniGameClip: {fileID: 8300000, guid: cfaf5cff84d3456bb8ae72443c27b806, type: 3}
   loseMiniGameClip: {fileID: 8300000, guid: c6d0e4edc406ada998803cae4d8be415, type: 3}
   gameTransitionClip: {fileID: 8300000, guid: b4489564cd5007bdfafa6c6793749374, type: 3}

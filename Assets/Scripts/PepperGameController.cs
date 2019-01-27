@@ -26,11 +26,17 @@ public class PepperGameController : MiniGameController
   private GameObject spawnedFood;
   private GameObject spawnedPepper;
 
+  [SerializeField]
+  AudioClip grindAudioClip;
+  private float grindAudioDuration;
+  private float grindAudioCooldown;
+
   // Start is called before the first frame update
   protected override void Start()
   {
     base.Start();
 
+    grindAudioDuration = 1f;
     difficulty = GameController.Plate.medium;
     foodPos = new Vector3(-0.04f, -1.75f, 0.0f);
     pepperPos = new Vector3(3.96f, 1.39f, 0.0f);
@@ -59,6 +65,8 @@ public class PepperGameController : MiniGameController
     if (gameStarted)
     {
       stopper.value = 0.5f + 0.5f * Mathf.Sin(1.0f * Time.time);
+
+      PlayGrindClip();
 
       if (Input.GetButtonDown("Fire1"))
       {
@@ -98,6 +106,13 @@ public class PepperGameController : MiniGameController
     Object.Destroy(spawnedPepper);
   }
 
+  private void PlayGrindClip() {
+    if (Time.time > grindAudioCooldown) {
+      grindAudioCooldown = Time.time + grindAudioDuration;
+      audio.PlayOneShot(grindAudioClip, 1f);
+    }
+  }
+
   private void UpdateGameState()
   {
     if (Mathf.Abs(stopper.value - marker.value) > 0.05f)
@@ -106,6 +121,7 @@ public class PepperGameController : MiniGameController
       return;
     }
 
+    audio.PlayOneShot(winMiniGameClip, 1f);
     dishesPeppered++;
     if (dishesPeppered >= 3)
     {

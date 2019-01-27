@@ -15,10 +15,10 @@ public class MiniGameController : MonoBehaviour
   private Text timerText;
   private SpriteRenderer bgSprite;
 
-  private AudioSource audio;
+  public AudioSource audio;
 
   [SerializeField]
-  AudioClip winMiniGameClip;
+  public AudioClip winMiniGameClip;
 
   [SerializeField]
   AudioClip loseMiniGameClip;
