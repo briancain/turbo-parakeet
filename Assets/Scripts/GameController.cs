@@ -76,7 +76,8 @@ public class GameController : MonoBehaviour
 
   public void startMiniGame(string type)
   {
-    if(minigameActive) {
+    if (minigameActive)
+    {
       return;
     }
 
@@ -89,9 +90,10 @@ public class GameController : MonoBehaviour
         break;
       case "HardPlate":
         hardMinigame.StartGame();
-        //Cursor.SetCursor(cursorTextureKnife, hotSpot, cursorMode);
+        Cursor.SetCursor(cursorTextureKnife, hotSpot, cursorMode);
         break;
       case "EasyPlate":
+        Cursor.SetCursor(cursorTextureHandOpen, hotSpot, cursorMode);
         easyMinigame.StartGame();
         break;
       default:
@@ -117,7 +119,10 @@ public class GameController : MonoBehaviour
   {
   }
 
-  public void EnableMiniGameSelection(){
+  public void EnableMiniGameSelection()
+  {
     minigameActive = false;
+    Debug.Log("returning cursor...");
+    Cursor.SetCursor(null, Vector2.zero, cursorMode);
   }
 }
