@@ -61,7 +61,7 @@ public class PepperGameController : MiniGameController
 
     if (gameStarted)
     {
-      stopper.value = 0.5f + 0.5f * Mathf.Sin(1.0f * Time.time);
+      stopper.value = 0.5f + 0.5f * Mathf.Sin(1.3f * Time.time);
 
       PlayGrindClip();
 
@@ -120,7 +120,7 @@ public class PepperGameController : MiniGameController
 
   private void UpdateGameState()
   {
-    if (Mathf.Abs(stopper.value - marker.value) > 0.05f)
+    if (Mathf.Abs(stopper.value - marker.value) > 0.08f)
     {
       Lose();
       return;
