@@ -8,9 +8,19 @@ public class MeatMiniGameScript : MonoBehaviour
   private float mouseY;
   private Vector2 mousePosition;
 
+  private int totalSlices;
+
   [SerializeField] private GameObject line;
 
   private List<GameObject> lineList;
+
+  void Update () {
+  }
+
+  void Start() {
+    lineList = new List<GameObject>();
+    totalSlices = 0;
+  }
 
   // connect the dots....
   void OnMouseDrag() {
@@ -20,9 +30,11 @@ public class MeatMiniGameScript : MonoBehaviour
     mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     GameObject localLineObj = Instantiate(line, mousePosition, Quaternion.Euler(0.0f, 0.0f, 0.0f));
     lineList.Add(localLineObj);
+
+    // NEED TO CHECK COLLISIONSSSSS OF POINTS
   }
 
-  void gameOver() {
+  public void OnDestroy() {
     lineList.Clear();
   }
 
@@ -31,11 +43,4 @@ public class MeatMiniGameScript : MonoBehaviour
     Debug.Log("Let go!");
   }
 
-  void Update () {
-  }
-
-  void Start() {
-    lineList = new List<GameObject>();
-
-  }
 }
