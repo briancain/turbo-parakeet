@@ -28,7 +28,6 @@ public class MiniGameController : MonoBehaviour
   // Update is called once per frame
   protected virtual void Update()
   {
-
     if (gameStarted)
     {
       timer -= Time.deltaTime;
