@@ -6,10 +6,12 @@ using UnityEngine.UI;
 public class MiniGameController : MonoBehaviour
 {
   protected bool gameStarted = false;
+  protected bool finishing = false;
   protected GameController.Plate difficulty; // Determined by subclass
 
   private float timer;
   private float gameTime = 10.0f;
+  private float finishTime = 1.0f;
 
   private GameController gc;
   private Text timerText;
@@ -40,7 +42,15 @@ public class MiniGameController : MonoBehaviour
   // Update is called once per frame
   protected virtual void Update()
   {
-    if (gameStarted)
+    if (finishing)
+    {
+      timer -= Time.deltaTime;
+      if (timer <= 0.0f)
+      {
+        EndGame();
+      }
+    }
+    else if (gameStarted)
     {
       timer -= Time.deltaTime;
       timerText.text = ":" + Mathf.Ceil(timer);
@@ -67,6 +77,7 @@ public class MiniGameController : MonoBehaviour
   protected virtual void EndGame()
   {
     gameStarted = false;
+    finishing = false;
     timerText.enabled = false;
     bgSprite.enabled = false;
 
@@ -77,13 +88,18 @@ public class MiniGameController : MonoBehaviour
   {
     audio.PlayOneShot(winMiniGameClip, 1f);
     gc.AddPlate(difficulty);
-    EndGame();
+    PrepForEnd();
   }
 
   public void Lose()
   {
     audio.PlayOneShot(loseMiniGameClip, 1f);
-    Debug.Log("lost minigame");
     EndGame();
+  }
+
+  protected virtual void PrepForEnd()
+  {
+    finishing = true;
+    timer = finishTime;
   }
 }
