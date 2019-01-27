@@ -38,6 +38,7 @@ public class GameController : MonoBehaviour
   private CursorMode cursorMode = CursorMode.Auto;
   private Vector2 hotSpot = Vector2.zero;
 
+  public SushiGameController easyMinigame;
   public PepperGameController mediumMinigame;
   public MeatSlicingGameController hardMinigame;
 
@@ -90,8 +91,10 @@ public class GameController : MonoBehaviour
         hardMinigame.StartGame();
         //Cursor.SetCursor(cursorTextureKnife, hotSpot, cursorMode);
         break;
+      case "EasyPlate":
+        easyMinigame.StartGame();
+        break;
       default:
-        mgc.StartGame();
         break;
     }
     minigameActive = true;
