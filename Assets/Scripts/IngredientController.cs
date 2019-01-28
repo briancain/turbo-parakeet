@@ -28,6 +28,7 @@ public class IngredientController : MonoBehaviour
       }
       else
       {
+        transform.GetChild(1).gameObject.SetActive(true);
         sgc.WrongSelect();
       }
     }
