@@ -54,7 +54,7 @@ public class GameController : MonoBehaviour
     audio = GetComponent<AudioSource>();
 
     // Default to 2 minutes
-    timeLeft = 120f;
+    timeLeft = 70f;
     timerText = GameObject.FindGameObjectWithTag("Timer").GetComponent<Text>();
     timerText.enabled = true;
 
