@@ -883,9 +883,6 @@ MonoBehaviour:
   cursorTexture: {fileID: 0}
   cursorTextureKnife: {fileID: 2800000, guid: f2422154987ebe9da8f957c532628b0b, type: 3}
   cursorTexturePepper: {fileID: 0}
-  cursorTextureHandOpen: {fileID: 2800000, guid: 2c314b52776844969889170f50719314,
-    type: 3}
-  cursorTextureHandSelect: {fileID: 0}
   easyMinigame: {fileID: 2084831359}
   mediumMinigame: {fileID: 1269509243}
   hardMinigame: {fileID: 1842637165}
@@ -1711,6 +1708,10 @@ MonoBehaviour:
   tunaNigiriTexture: {fileID: 21300000, guid: 22cfa13bfc68342e1963cdb792391161, type: 3}
   salmonRollTexture: {fileID: 21300000, guid: bb2437a388ecc4790b76cf1d4be101db, type: 3}
   tunaRollTexture: {fileID: 21300000, guid: 70947de975a7b41ea9353e34c6641f2d, type: 3}
+  cursorTextureHandOpen: {fileID: 2800000, guid: 2c314b52776844969889170f50719314,
+    type: 3}
+  cursorTextureHandSelect: {fileID: 2800000, guid: b797c03c8cc694dd9a91659be7d77d08,
+    type: 3}
 --- !u!4 &2084831360
 Transform:
   m_ObjectHideFlags: 0

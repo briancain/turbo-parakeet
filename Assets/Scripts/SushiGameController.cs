@@ -54,6 +54,14 @@ public class SushiGameController : MiniGameController
   [SerializeField]
   Sprite tunaRollTexture;
 
+  [SerializeField]
+  Texture2D cursorTextureHandOpen;
+  [SerializeField]
+  Texture2D cursorTextureHandSelect;
+
+  private CursorMode cursorMode = CursorMode.Auto;
+  private Vector2 hotSpot;
+
   // Start is called before the first frame update
   protected override void Start()
   {
@@ -71,6 +79,8 @@ public class SushiGameController : MiniGameController
     objs = new List<GameObject>();
 
     difficulty = GameController.Plate.easy;
+
+    hotSpot = new Vector2(35.0f, 30.0f);
   }
 
   public override void StartGame()
@@ -102,6 +112,28 @@ public class SushiGameController : MiniGameController
     //Enable our UI prompt
     sushiUIPrompt.SetActive(true);
     sushiPromptImage.sprite = GetRecipeTexture();
+
+    // Set our cursor to an open hand on no click, and a closed hand on
+    // click.
+    Cursor.SetCursor(cursorTextureHandOpen, hotSpot, cursorMode);
+  }
+
+  protected override void Update()
+  {
+    base.Update();
+
+    if (gameStarted)
+    {
+      if (Input.GetMouseButtonDown(0))
+      {
+        Cursor.SetCursor(cursorTextureHandSelect, hotSpot, cursorMode);
+      }
+      else if (Input.GetMouseButtonUp(0))
+      {
+
+        Cursor.SetCursor(cursorTextureHandOpen, hotSpot, cursorMode);
+      }
+    }
   }
 
   protected override void EndGame()
@@ -114,6 +146,9 @@ public class SushiGameController : MiniGameController
     objs.Clear();
 
     sushiUIPrompt.SetActive(false);
+
+
+    Cursor.SetCursor(null, Vector2.zero, cursorMode);
   }
 
   protected override void PrepForEnd()

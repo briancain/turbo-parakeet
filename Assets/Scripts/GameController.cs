@@ -32,12 +32,7 @@ public class GameController : MonoBehaviour
   Texture2D cursorTextureKnife;
   [SerializeField]
   Texture2D cursorTexturePepper;
-  [SerializeField]
-  Texture2D cursorTextureHandOpen;
-  [SerializeField]
-  Texture2D cursorTextureHandSelect;
   private CursorMode cursorMode = CursorMode.Auto;
-  private Vector2 hotSpot;
 
   public SushiGameController easyMinigame;
   public PepperGameController mediumMinigame;
@@ -65,8 +60,6 @@ public class GameController : MonoBehaviour
 
     completedPlates = new List<Plate>();
     minigameActive = false;
-
-    hotSpot = new Vector2(35.0f, 30.0f);
 
     plateStack = new Vector3(5.94f, -2.45f, 0.0f);
 
@@ -113,7 +106,6 @@ public class GameController : MonoBehaviour
         Cursor.SetCursor(cursorTextureKnife, Vector2.zero, cursorMode);
         break;
       case "EasyPlate":
-        Cursor.SetCursor(cursorTextureHandOpen, hotSpot, cursorMode);
         easyMinigame.StartGame();
         break;
       default:
