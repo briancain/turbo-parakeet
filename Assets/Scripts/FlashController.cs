@@ -35,7 +35,7 @@ public class FlashController : MonoBehaviour
         flashing = false;
       }
 
-      m.SetFloat("_FlashAmount", 0.8f * (flashTimer / flashTime));
+      m.SetFloat("_FlashAmount", 0.6f * (flashTimer / flashTime));
     }
   }
 
