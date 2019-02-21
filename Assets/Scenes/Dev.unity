@@ -883,6 +883,7 @@ MonoBehaviour:
   cursorTexture: {fileID: 0}
   cursorTextureKnife: {fileID: 2800000, guid: f2422154987ebe9da8f957c532628b0b, type: 3}
   cursorTexturePepper: {fileID: 0}
+  plateController: {fileID: 1835819483}
   easyMinigame: {fileID: 2084831359}
   mediumMinigame: {fileID: 1269509243}
   hardMinigame: {fileID: 1842637165}
