@@ -34,6 +34,8 @@ public class GameController : MonoBehaviour
   Texture2D cursorTexturePepper;
   private CursorMode cursorMode = CursorMode.Auto;
 
+  public PlateController plateController;
+
   public SushiGameController easyMinigame;
   public PepperGameController mediumMinigame;
   public MeatSlicingGameController hardMinigame;
@@ -94,6 +96,8 @@ public class GameController : MonoBehaviour
       return;
     }
 
+    plateController.DisablePlates();
+
     Debug.Log("Starting the game: " + type);
 
     switch (type)
@@ -153,6 +157,8 @@ public class GameController : MonoBehaviour
     timerText.enabled = true;
     Debug.Log("returning cursor...");
     Cursor.SetCursor(null, Vector2.zero, cursorMode);
+
+    plateController.EnablePlates();
   }
 
   private int CalculateScore()

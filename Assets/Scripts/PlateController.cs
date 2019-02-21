@@ -28,48 +28,90 @@ public class PlateController : MonoBehaviour
 
   private float plateGenerateTimer;
 
+  private bool platesDisabled;
+
   // Start is called before the first frame update
-  void Start() {
-    startPosition = new Vector3(-9.5f,3.5f,0f);
-    middlePosition = new Vector3(0f,1.5f,0f);
-    endPosition = new Vector3(9.5f,3.5f,0f);
+  void Start()
+  {
+    startPosition = new Vector3(-9.5f, 3.5f, 0f);
+    middlePosition = new Vector3(0f, 1.5f, 0f);
+    endPosition = new Vector3(9.5f, 3.5f, 0f);
 
     plateGenerateTimer = 1.0f;
 
     activePlates = new List<GameObject>();
     generatePlate();
+
+    platesDisabled = false;
   }
 
   // Update is called once per frame
-  void Update() {
+  void Update()
+  {
     generatePlate();
   }
 
-  void generatePlate() {
-    if (plateGenerateTimer <= 0) {
+  void generatePlate()
+  {
+    if (plateGenerateTimer <= 0)
+    {
       float randomPlate = Random.Range(0, 10);
       GameObject plateChoice;
 
-      if (randomPlate >= 0 && randomPlate <= 4) {
+      if (randomPlate >= 0 && randomPlate <= 4)
+      {
         //Debug.Log("Easy plate");
         plateChoice = easyPlate;
-      } else if (randomPlate >= 5 && randomPlate <= 7) {
+      }
+      else if (randomPlate >= 5 && randomPlate <= 7)
+      {
         //Debug.Log("Medium plate");
         plateChoice = mediumPlate;
-      } else {
+      }
+      else
+      {
         //Debug.Log("Hard plate");
         plateChoice = hardPlate;
       }
 
       GameObject thisPlate = Instantiate(plateChoice, startPosition, Quaternion.identity);
-      //activePlates.Add(thisPlate);
+      if (platesDisabled)
+      {
+        thisPlate.layer = 2;
+      }
+      activePlates.Add(thisPlate);
       plateGenerateTimer = 2f;
     }
 
     plateGenerateTimer -= Time.deltaTime;
   }
 
-  void destroyPlates() {
+  void destroyPlates()
+  {
     activePlates.Clear();
+  }
+
+  public void DisablePlates()
+  {
+    platesDisabled = true;
+    foreach (GameObject p in activePlates)
+    {
+      if (p != null)
+      {
+        p.layer = 2;
+      }
+    }
+  }
+
+  public void EnablePlates()
+  {
+    platesDisabled = false;
+    foreach (GameObject p in activePlates)
+    {
+      if (p != null)
+      {
+        p.layer = 0;
+      }
+    }
   }
 }
