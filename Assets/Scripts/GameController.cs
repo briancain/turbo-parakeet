@@ -41,7 +41,7 @@ public class GameController : MonoBehaviour
   public float plateStackOffset = 0.17f;
   public List<GameObject> platePrefabs;
 
-  private List<GameObject> objs;
+  private List<GameObject> plates;
   private Vector3 plateStack;
 
 
@@ -63,7 +63,7 @@ public class GameController : MonoBehaviour
 
     plateStack = new Vector3(5.94f, -2.45f, 0.0f);
 
-    objs = new List<GameObject>();
+    plates = new List<GameObject>();
   }
 
   // Update is called once per frame
@@ -121,9 +121,19 @@ public class GameController : MonoBehaviour
     Debug.Log("Won plate " + difficulty);
 
     GameObject plate = Instantiate(platePrefabs[(int)difficulty], plateStack, Quaternion.identity);
-    objs.Add(plate);
-    plate.GetComponent<SpriteRenderer>().sortingOrder = objs.Count;
+    plates.Add(plate);
+    plate.GetComponent<SpriteRenderer>().sortingOrder = plates.Count;
     plateStack.y += plateStackOffset;
+  }
+
+  public void FlashPlates()
+  {
+    Debug.Log("Flashing plates");
+    foreach (GameObject p in plates)
+    {
+      FlashController fc = p.GetComponent<FlashController>();
+      fc.Flash();
+    }
   }
 
   void gameOver()

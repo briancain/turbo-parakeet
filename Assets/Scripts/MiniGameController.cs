@@ -77,6 +77,11 @@ public class MiniGameController : MonoBehaviour
 
   protected virtual void EndGame()
   {
+    if (finishing)
+    {
+      gc.FlashPlates();
+    }
+
     gameStarted = false;
     finishing = false;
     timerUI.SetActive(false);
