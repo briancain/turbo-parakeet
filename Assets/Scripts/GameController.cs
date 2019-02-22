@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -46,6 +47,8 @@ public class GameController : MonoBehaviour
   private List<GameObject> plates;
   private Vector3 plateStack;
 
+  private bool gameOverFlag;
+
 
   [SerializeField]
   AudioClip gameOverAudioClip;
@@ -66,11 +69,18 @@ public class GameController : MonoBehaviour
     plateStack = new Vector3(5.94f, -2.45f, 0.0f);
 
     plates = new List<GameObject>();
+
+    gameOverFlag = false;
   }
 
   // Update is called once per frame
   void Update()
   {
+    if (gameOverFlag) {
+      if (Input.GetMouseButtonDown(0)) {
+        SceneManager.LoadScene("Dev");
+      }
+    }
     updateTimer();
   }
 
@@ -149,6 +159,7 @@ public class GameController : MonoBehaviour
 
     int score = CalculateScore();
     gameOverText.text = "$" + score + ".00";
+    gameOverFlag = true;
   }
 
   public void EnableMiniGameSelection()
