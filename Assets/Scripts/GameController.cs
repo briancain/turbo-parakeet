@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
 
   // Global Timer
   private float timeLeft;
+  private float gameOverTimer;
   private Text timerText;
 
   public GameObject gameOverUI;
@@ -60,6 +61,7 @@ public class GameController : MonoBehaviour
 
     // Default to 2 minutes
     timeLeft = 70f;
+    gameOverTimer = 5f;
     timerText = GameObject.FindGameObjectWithTag("Timer").GetComponent<Text>();
     timerText.enabled = true;
 
@@ -77,9 +79,10 @@ public class GameController : MonoBehaviour
   void Update()
   {
     if (gameOverFlag) {
-      if (Input.GetMouseButtonDown(0)) {
+      if (Input.GetMouseButtonDown(0) && gameOverTimer <= 0f) {
         SceneManager.LoadScene("Dev");
       }
+      gameOverTimer -= Time.deltaTime;
     }
     updateTimer();
   }
